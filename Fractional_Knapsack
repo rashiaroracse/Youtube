@@ -1,0 +1,25 @@
+import operator
+# no of objects
+objects = int(input())
+# profits and weight asssociated to it profit = []'
+print("Profits")
+profit = list(map(int,input().split()))
+print("Weight")
+weight = list(map(int,input().split()))
+print("Max capacity of the bag")
+max_cap = int(input())
+#list of list
+#l = [[profit,wieght,p/w]]
+l = sorted(l,reverse = True , key =operator.itemgetter(2))
+max_profit = 0
+frac_weight =0
+for i in range(objects):
+    if max_cap >0 and l[i][1] <max_cap:
+        max_cap -= l[i][1]
+        profit_max = l[i][0]
+    else:
+        frac_obj = i
+        break
+if max_cap >0:
+    max_profit += max_cap*(l[frac_obj][0]/(l[frac_obj][1]))
+print(int(max_profit))
